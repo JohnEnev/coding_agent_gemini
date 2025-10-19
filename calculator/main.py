@@ -1,6 +1,6 @@
 import sys
 from pkg.calculator import Calculator
-from pkg.renderer import render
+from pkg.render import format_json_output
 
 def main():
     calculator = Calculator()
@@ -13,7 +13,7 @@ def main():
     expression = " ".join(sys.argv[1:])
     try:
         result = calculator.evaluate(expression)
-        to_print = render(expression, result)
+        to_print = format_json_output(expression, result)
         print(to_print)
     except Exception as e:
         print(f"Error: {e}")
